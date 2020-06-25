@@ -1,7 +1,7 @@
 <?
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "twolee", "pwd" => "lee2020!", "Database" => "twolee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:twolee.database.windows.net,1433";
+$connectionInfo = array("UID" => "gunan", "pwd" => "lee2020!", "Database" => "food", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:fooddb.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
     $row = 1;

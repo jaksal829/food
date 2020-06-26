@@ -33,6 +33,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<p> 테스트 </p>
+<p> 맛집 </p>
 </body>
 </html>

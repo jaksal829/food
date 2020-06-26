@@ -30,7 +30,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <html>
 <head>
     <meta charset="utf-8">
-    <title>맛집</title>
+    <title>맛집 검색</title>
 </head>
 <body>
 <p> 테스트 </p>

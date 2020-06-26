@@ -1,8 +1,9 @@
 <?
 // SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "gunan", "pwd" => "lee2020!", "Database" => "jaean", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:fooddb.database.windows.net,1433";
+$serverName = "tcp:jaean.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
+
     $row = 1;
     $handle = fopen("myfile.csv", "r+");
     //$sql = "INSERT INTO latlng VALUES ('".$data[0]."','".$data[1]."');";

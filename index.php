@@ -12,7 +12,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
         $row++;
 
-        $sql = "INSERT INTO food VALUES (";
+        $sql = "INSERT INTO foods VALUES (";
 
         for ($c=0; $c < $num; $c++) {
             $sql .= "'" . $data[$c] . "'";
@@ -33,6 +33,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<p> 맛집 </p>
+<p> 테스트 </p>
 </body>
 </html>

@@ -29,6 +29,31 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         //echo "$sql<br />";
     }
     fclose($handle);
+    
+    $lat = [];
+    $lng = [];
+    $b_name = [];
+    $sector = [];
+    $loc_name = [];
+    $loc = [];
+    $menu = [];
+    $phone = [];
+    $lname = [];
+    $sql = "SELECT b_name, sectors, loc_name, loc, menu, phone, lname FROM food";
+    $getResults = sqlsrv_query($conn,$sql);
+    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)){
+      $lat[] = $row['lat'];
+      $lng[] = $row['lng'];
+      $b_name[] = $row['b_name'];
+      $sector[] = $row['sectors'];
+      $loc[] = $row['loc'];
+      $loc_name[] = $row['loc_name'];
+      $menu[] = $row['menu'];
+      $phone[] = $row['phone'];
+      $lname[] = $row['lname'];
+    }
+
+    sqlsrv_close($conn);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -50,6 +75,10 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         <span class="title">지도중심기준 행정동 주소정보</span>
         <span id="centerAddr"></span>
     </div>
+</div>
+<div class="tb">
+    <table>
+    </table>
 </div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
@@ -94,6 +123,28 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
         }   
     });
 });
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+// 마커 이미지의 이미지 크기 입니다
+var imageSize = new kakao.maps.Size(24, 35); 
+      
+// 마커 이미지를 생성합니다    
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+
+<?
+for($i = 0; $i < count($lname); $i++){
+    ?>
+    var foodmk = new kakao.maps.Marker({
+        map:map,
+        position: new kakao.maps.LatLng(<? echo $lat1[$i]; ?>,<? echo $lng1[$i]; ?>),
+        image: markerImage
+    })
+    <?
+}
+?>
+
+
+
+
 
 // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'idle', function() {

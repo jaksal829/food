@@ -1,9 +1,8 @@
 <?
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "lee", "pwd" => "app2020!", "Database" => "lee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "lee", "pwd" => "app2020!{your_password_here}", "Database" => "lee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:jaeran.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-
     $row = 1;
     $handle = fopen("myfile.csv", "r+");
     //$sql = "INSERT INTO latlng VALUES ('".$data[0]."','".$data[1]."');";
@@ -33,6 +32,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<p> 테 </p>
+<p> 테스트 </p>
 </body>
 </html>

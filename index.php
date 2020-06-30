@@ -96,13 +96,10 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <button onclick="Mk15()">북구 맛집</button>
     <button onclick="Mk16()">해운대구 맛집</button>
 </p> 
-<script>
+
 <div onclick="mk1()">
-    <p>
-      안녕
-    </p>
 </div>
-</script>
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

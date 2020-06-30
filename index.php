@@ -1,5 +1,7 @@
 <?php
-header('Content-Type: text/html; charset=UTF-8');
+  header('Content-Type: text/html; charset=utf-8');
+?>
+<?php
 // SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "gunan", "pwd" => "app2020!", "Database" => "app", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:appcen.database.windows.net,1433";

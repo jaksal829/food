@@ -39,11 +39,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <head>
     <meta charset="utf-8">
     <style>
-        body{
-            height : 100%;
-        }
         .map {
             width :100%;
+            height : 768px;
         }
     </style>
     <title>맛집 검색</title>

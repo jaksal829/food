@@ -3,9 +3,14 @@
 $connectionInfo = array("UID" => "lee", "pwd" => "app2020!", "Database" => "lee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:jaeran.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-   
+    if (!$conn) {
+        echo "conn: false";
+    }
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
     $row = 1;
-    $handle = fopen("busan.csv", "r+");
+    $handle = fopen("myfile.csv", "r+");
     //$sql = "INSERT INTO latlng VALUES ('".$data[0]."','".$data[1]."');";
     while (($data = fgetcsv($handle, 1000, ",")) !== false) {
         $num = count($data);
@@ -33,6 +38,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<p> 테트 </p>
+<p> 테스트 </p>
 </body>
 </html>

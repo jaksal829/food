@@ -60,7 +60,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <head>
     <meta charset="utf-8">
     <style>
-        .map_wrap {position:relative;width:850px;height:800px;}
+        .map_wrap {position:relative;width:50%;height:750px;}
         .title {font-weight:bold;display:block;}
         .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
         #centerAddr {display:block;margin-top:2px;font-weight: normal;}
@@ -77,13 +77,14 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     </div>
 </div>
 <p>
+    <input type="button" value="클릭">
     <button onclick="Mkall()">처음화면으로</button>
     <button onclick="Mk1()">수영구 맛집</button>
     <button onclick="Mk2()">강서구 맛집</button>
     <button onclick="Mk3()">금정구 맛집</button>
     <button onclick="Mk4()">기장군 맛집</button>
     <button onclick="Mk5()">남구 맛집</button>
-    <button onclick="Mk6()">동구 맛집</button>
+    <button onclick="Mk6()">중구 맛집</button>
     <button onclick="Mk7()">동래구 맛집</button>
     <button onclick="Mk8()">부산진구 맛집</button>
     <button onclick="Mk9()">북구 맛집</button>
@@ -92,13 +93,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <button onclick="Mk12()">서구 맛집</button>
     <button onclick="Mk13()">연제구 맛집</button>
     <button onclick="Mk14()">영도구 맛집</button>
-    <button onclick="Mk15()">중구 맛집</button>
+    <button onclick="Mk15()">북구 맛집</button>
     <button onclick="Mk16()">해운대구 맛집</button>
 </p> 
-<div class="tb">
-    <table>
-    </table>
-</div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
@@ -208,7 +205,7 @@ for($i = 0; $i < count($lname); $i++){
         });
         mk5.push(foodmk);
     }
-    else if("<? echo $lname[$i]; ?>" == "동구"){
+    else if("<? echo $lname[$i]; ?>" == "중구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
@@ -280,7 +277,7 @@ for($i = 0; $i < count($lname); $i++){
         });
         mk14.push(foodmk);
     }
-    else if("<? echo $lname[$i]; ?>" == "중구"){
+    else if("<? echo $lname[$i]; ?>" == "북구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),

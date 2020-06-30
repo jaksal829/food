@@ -1,7 +1,7 @@
 <?
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "gunan", "pwd" => "lee2020!", "Database" => "jaean", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:jaean.database.windows.net,1433";
+$connectionInfo = array("UID" => "lee", "pwd" => "app2020!", "Database" => "lee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:jaeran.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
     $row = 1;
@@ -33,6 +33,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<p> 테스트 </p>
+<p> 테 </p>
 </body>
 </html>

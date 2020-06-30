@@ -77,7 +77,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     </div>
 </div>
 <p>
-    <input id="mk1" class="mk1" type="button" value="클릭릭" onclick="Mk1()">
+    <input id="mk1" class="mk1" type="button" value="클릭" onclick="Mk1()">
     <button onclick="Mkall()">처음화면으로</button>
     <button onclick="Mk1()">수영구 맛집</button>
     <button onclick="Mk2()">강서구 맛집</button>
@@ -98,8 +98,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 </p> 
 <script>
 if(mk1.clicked == true){
-  <? echo "이야";?>
-}
+  mk1.value = "이야";
+  }
 </script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>

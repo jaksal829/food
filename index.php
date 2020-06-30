@@ -452,7 +452,7 @@ function Mkall() {
   setmk14(map);
   setmk15(map);
   setmk16(map);
-  $("#foodTbody").empty();
+  
   var html = '';
   
   <?for($i = 0; $i < count($lname);$i++){?>
@@ -466,6 +466,7 @@ function Mkall() {
         }
        
 <?  } ?>
+    $("#foodTbody").empty();
     $("#foodTbody").append(html); 
 }
 function Mk1() {

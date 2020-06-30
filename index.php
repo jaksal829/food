@@ -98,7 +98,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 </p> 
 
 <script>
-if(mk1.onclick== true){
+if(mk1.clicked== true){
   alert("이야");
 }
 </script>

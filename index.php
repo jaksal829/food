@@ -35,15 +35,22 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <head>
     <meta charset="utf-8">
     <style>
-        .map {
-            width :100%;
-            height : 50%;
-        }
+        .map_wrap {position:relative;width:50%;height:750px;}
+        .title {font-weight:bold;display:block;}
+        .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+        #centerAddr {display:block;margin-top:2px;font-weight: normal;}
+        .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
     </style>
     <title>맛집 검색</title>
 </head>
 <body>
-<div id="map" class="map"></div>
+<div class="map_wrap">
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+    <div class="hAddr">
+        <span class="title">지도중심기준 행정동 주소정보</span>
+        <span id="centerAddr"></span>
+    </div>
+</div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9"></script>
 <script>

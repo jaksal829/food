@@ -97,8 +97,11 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <button onclick="Mk16()">해운대구 맛집</button>
 </p> 
 
-<div onclick="mk1()">
-</div>
+<script>
+if(mk1.onclick== true){
+  alert("이야");
+}
+</script>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
@@ -454,7 +457,6 @@ function Mk1() {
   setmk14(null);
   setmk15(null);
   setmk16(null);
-  
   }
 
 function Mk2() {

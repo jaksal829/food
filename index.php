@@ -133,19 +133,23 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 <?
 for($i = 0; $i < count($lname); $i++){
     ?>
-    if(<? echo $lname[$i]; ?> == "수영구"){
+    //if(<? echo $lname[$i]; ?> == "수영구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
             image: markerImage
         });
-    }
-    
+    //}
+    var foodinfo = new kakao.maps.InfoWindow({content : '<div style="padding:5px;">위치 : <? echo $lname[$i]; ?> <br><p>기간 : <? echo $loc_name[$i]; ?></p></div>', removable : true , zindex : 1});
+    kakao.maps.event.addListener(foodmk, 'click', makerClick(map,foodmk,foodinfo));
     <?
 }
 ?>
-
-
+function makerClick(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map,marker);
+    };
+}
 
 
 

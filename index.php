@@ -47,7 +47,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-<div id="map" class="map"style="width:100%;height:350px;"></div>
+<div id="map" class="map"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdda6bf48b2ef47a00384ad09b8c0684"></script>
 <script>

@@ -65,6 +65,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
         #centerAddr {display:block;margin-top:2px;font-weight: normal;}
         .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+        #foodTbody {margin:2px; font-weight: normal;}
     </style>
     <title>맛집 검색</title>
 </head>
@@ -433,6 +434,7 @@ function setmk16(map) {
   }
 }
 function Mkall() {
+    $("#foodTbody").empty();
   setmk1(map);
   setmk2(map);
   setmk3(map);

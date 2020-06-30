@@ -454,19 +454,7 @@ function Mk1() {
   setmk14(null);
   setmk15(null);
   setmk16(null);
-  <?
-    for($i = 0; $i < count($lname); $i++){
-      ?>
-      if("<? echo $lname[$i]; ?>" == "수영구"){
-        <?
-          echo "이재안";  
-        ?>
-      }else{
-      <?
-        echo "실패";      
-      }
-    }
-      ?> 
+  
   }
 
 function Mk2() {

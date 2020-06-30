@@ -468,19 +468,19 @@ function Mk1() {
   setmk15(null);
   setmk16(null);
   
-  var html = '';
+  var html1 = '';
   <?for($i = 0; $i < count($lname);$i++){?>
         if("<? echo $lname;?>" == "수영구") {
-            html += '<tr>';
-            html += '<td><? echo $loc_name[$i];?></td>';
-            html += '<td><? echo $b_name[$i];?></td>';
-            html += '<td><? echo $phone[$i];?></td>';
-            html += '<td><? echo $loc[$i];?></td>';
-            html += '</tr>';
+            html1 += '<tr>';
+            html1 += '<td><? echo $loc_name[$i];?></td>';
+            html1 += '<td><? echo $b_name[$i];?></td>';
+            html1 += '<td><? echo $phone[$i];?></td>';
+            html1 += '<td><? echo $loc[$i];?></td>';
+            html1 += '</tr>';
         }
 <?  } ?>
 //$("#foodTbody").empty();
-$("#foodTbody").html(html);
+$("#foodTbody").append(html1);
 }
 function Mk2() {
   setmk1(null);

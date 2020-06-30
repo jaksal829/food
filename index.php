@@ -76,10 +76,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         <span id="centerAddr"></span>
     </div>
 </div>
-<div class="tb">
-    <table>
-    </table>
-</div>
+
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
@@ -161,8 +158,14 @@ for($i = 0; $i < count($lname); $i++){
     var foodinfo = new kakao.maps.InfoWindow({content : '<div style="padding:5px;">위치 : <? echo $lname[$i]; ?> <br><p>기간 : <? echo $loc_name[$i]; ?></p></div>', removable : true , zindex : 1});
     kakao.maps.event.addListener(foodmk, 'click', makerClick(map,foodmk,foodinfo));
     <?
+?>
+<div class="info">
+    <p>업종 : <?$sector[$i]?></br>가게이름 : <?$loc_name[i]?></p>    
+</div>
+<?
 }
 ?>
+
 function makerClick(map, marker, infowindow) {
     return function() {
         infowindow.open(map,marker);

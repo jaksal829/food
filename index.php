@@ -76,7 +76,29 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         <span id="centerAddr"></span>
     </div>
 </div>
-
+<p>
+    <button onclick="Mkall()">처음화면으로</button>
+    <button onclick="Mk1()">수영구 맛집</button>
+    <button onclick="Mk2()">강서구 맛집</button>
+    <button onclick="Mk3()">금정구 맛집</button>
+    <button onclick="Mk4()">기장군 맛집</button>
+    <button onclick="Mk5()">남구 맛집</button>
+    <button onclick="Mk6()">중구 맛집</button>
+    <button onclick="Mk7()">동래구 맛집</button>
+    <button onclick="Mk8()">부산진구 맛집</button>
+    <button onclick="Mk9()">북구 맛집</button>
+    <button onclick="Mk10()">사상구 맛집</button>
+    <button onclick="Mk11()">사하구 맛집</button>
+    <button onclick="Mk12()">서구 맛집</button>
+    <button onclick="Mk13()">연제구 맛집</button>
+    <button onclick="Mk14()">영도구 맛집</button>
+    <button onclick="Mk15()">북구 맛집</button>
+    <button onclick="Mk16()">해운대구 맛집</button>
+</p> 
+<div class="tb">
+    <table>
+    </table>
+</div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
@@ -136,7 +158,6 @@ var mk13 = [];
 var mk14 = [];
 var mk15 = [];
 var mk16 = [];
-var mk17 = [];
 var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 // 마커 이미지의 이미지 크기 입니다
 var imageSize = new kakao.maps.Size(24, 35); 
@@ -155,17 +176,132 @@ for($i = 0; $i < count($lname); $i++){
         });
         mk1.push(foodmk);
     }
-    var foodinfo = new kakao.maps.InfoWindow({content : '<div style="padding:5px;">위치 : <? echo $lname[$i]; ?> <br><p>기간 : <? echo $loc_name[$i]; ?></p></div>', removable : true , zindex : 1});
+    else if("<? echo $lname[$i]; ?>" == "강서구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk2.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "금정구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk3.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "기장군"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk4.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "남구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk5.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "중구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk6.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "동래구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk7.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "부산진구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk8.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "북구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk9.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "사상구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk10.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "사하구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk11.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "서구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk12.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "연제구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk13.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "영도구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk14.push(foodmk);
+    }
+    else if("<? echo $lname[$i]; ?>" == "북구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk15.push(foodmk);
+    }
+    else {
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+        mk16.push(foodmk);
+    }
+    
+    var foodinfo = new kakao.maps.InfoWindow({content : '<div style="padding:5px;">위치 : <? echo $lname[$i]; ?> <br><p>가게 : <? echo $loc_name[$i]; ?></p></div>', removable : true , zindex : 1});
     kakao.maps.event.addListener(foodmk, 'click', makerClick(map,foodmk,foodinfo));
     <?
-?>
-<div class="info">
-    <p>업종 : <?$sector[$i]?></br>가게이름 : <?$loc_name[i]?></p>    
-</div>
-<?
 }
 ?>
-
 function makerClick(map, marker, infowindow) {
     return function() {
         infowindow.open(map,marker);
@@ -202,6 +338,392 @@ function displayCenterInfo(result, status) {
             }
         }
     }    
+}
+function setmk1(map) {
+  for(var j = 0; j < mk1.length; j++){
+    mk1[j].setMap(map);
+  }
+}
+function setmk2(map) {
+  for(var j = 0; j < mk2.length; j++){
+    mk2[j].setMap(map);
+  }
+}
+function setmk3(map) {
+  for(var j = 0; j < mk3.length; j++){
+    mk3[j].setMap(map);
+  }
+}
+function setmk4(map) {
+  for(var j = 0; j < mk4.length; j++){
+    mk4[j].setMap(map);
+  }
+}
+function setmk5(map) {
+  for(var j = 0; j < mk5.length; j++){
+    mk5[j].setMap(map);
+  }
+}
+function setmk6(map) {
+  for(var j = 0; j < mk6.length; j++){
+    mk6[j].setMap(map);
+  }
+}
+function setmk7(map) {
+  for(var j = 0; j < mk7.length; j++){
+    mk7[j].setMap(map);
+  }
+}
+function setmk8(map) {
+  for(var j = 0; j < mk8.length; j++){
+    mk8[j].setMap(map);
+  }
+}
+function setmk9(map) {
+  for(var j = 0; j < mk9.length; j++){
+    mk9[j].setMap(map);
+  }
+}
+function setmk10(map) {
+  for(var j = 0; j < mk10.length; j++){
+    mk10[j].setMap(map);
+  }
+}
+function setmk11(map) {
+  for(var j = 0; j < mk11.length; j++){
+    mk11[j].setMap(map);
+  }
+}
+function setmk12(map) {
+  for(var j = 0; j < mk12.length; j++){
+    mk12[j].setMap(map);
+  }
+}
+function setmk13(map) {
+  for(var j = 0; j < mk13.length; j++){
+    mk13[j].setMap(map);
+  }
+}
+function setmk14(map) {
+  for(var j = 0; j < mk14.length; j++){
+    mk14[j].setMap(map);
+  }
+}
+function setmk15(map) {
+  for(var j = 0; j < mk15.length; j++){
+    mk15[j].setMap(map);
+  }
+}
+function setmk16(map) {
+  for(var j = 0; j < mk16.length; j++){
+    mk16[j].setMap(map);
+  }
+}
+function Mkall() {
+  setmk1(map);
+  setmk2(map);
+  setmk3(map);
+  setmk4(map);
+  setmk5(map);
+  setmk6(map);
+  setmk7(map);
+  setmk8(map);
+  setmk9(map);
+  setmk10(map);
+  setmk11(map);
+  setmk12(map);
+  setmk13(map);
+  setmk14(map);
+  setmk15(map);
+  setmk16(map);
+}
+function Mk1() {
+  setmk1(map);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk2() {
+  setmk1(null);
+  setmk2(map);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk3() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(map);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk4() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(map);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk5() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(map);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk6() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(map);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk7() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(map);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk8() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(map);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk9() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(map);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk10() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(map);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk11() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(map);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk12() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(map);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk13() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(map);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk14() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(map);
+  setmk15(null);
+  setmk16(null);
+}
+function Mk15() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(map);
+  setmk16(null);
+}
+function Mk16() {
+  setmk1(null);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(map);
 }
 </script>
 </body>

@@ -77,7 +77,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     </div>
 </div>
 <p>
-    <input type="button" value="클릭릭" onclick="Mk1()">
+    <input id="mk1" class="mk1" type="button" value="클릭릭" onclick="Mk1()">
     <button onclick="Mkall()">처음화면으로</button>
     <button onclick="Mk1()">수영구 맛집</button>
     <button onclick="Mk2()">강서구 맛집</button>
@@ -96,7 +96,20 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <button onclick="Mk15()">북구 맛집</button>
     <button onclick="Mk16()">해운대구 맛집</button>
 </p> 
+<script>
+<?
+for($i = 0;  $i < count($lname); $i++){
+?>
+  if("<? echo $lname[$i];?>"=="수영구"){
+    <div>
+      <?
+        echo $lname[$i];
+      ?>
+    </div>
+  }
+}
 
+</script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

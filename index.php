@@ -451,24 +451,7 @@ function Mkall() {
   setmk16(map);
 }
 function Mk1() {
-  setmk1(map);
-  setmk2(null);
-  setmk3(null);
-  setmk4(null);
-  setmk5(null);
-  setmk6(null);
-  setmk7(null);
-  setmk8(null);
-  setmk9(null);
-  setmk10(null);
-  setmk11(null);
-  setmk12(null);
-  setmk13(null);
-  setmk14(null);
-  setmk15(null);
-  setmk16(null);
-  
-  var html1 = '';
+    var html1 = '';
   <?for($i = 0; $i < count($lname);$i++){?>
         if("<? echo $lname;?>" == "수영구") {
             html1 += '<tr>';
@@ -479,8 +462,25 @@ function Mk1() {
             html1 += '</tr>';
         }
 <?  } ?>
-//$("#foodTbody").empty();
-$("#foodTbody").append(html1);
+    $("#foodTbody").empty();
+    $("#foodTbody").append(html1);
+
+    setmk1(map);
+    setmk2(null);
+    setmk3(null);
+    setmk4(null);
+    setmk5(null);
+    setmk6(null);
+    setmk7(null);
+    setmk8(null);
+    setmk9(null);
+    setmk10(null);
+    setmk11(null);
+    setmk12(null);
+    setmk13(null);
+    setmk14(null);
+    setmk15(null);
+    setmk16(null);
 }
 function Mk2() {
   setmk1(null);

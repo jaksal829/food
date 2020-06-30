@@ -3,6 +3,7 @@
 $connectionInfo = array("UID" => "lee", "pwd" => "app2020!", "Database" => "lee", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:jaeran.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
+
     if (!$conn) {
         echo "conn: false";
     }

@@ -77,7 +77,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     </div>
 </div>
 <p>
-    <input type="button" value="클릭" onclick="Mk1()">
+    <input type="button" value="클릭릭" onclick="Mk1()">
     <button onclick="Mkall()">처음화면으로</button>
     <button onclick="Mk1()">수영구 맛집</button>
     <button onclick="Mk2()">강서구 맛집</button>

@@ -454,7 +454,6 @@ function Mk1() {
   setmk14(null);
   setmk15(null);
   setmk16(null);
-  alert("test");
   <?
     for($i = 0; $i < count($lname); $i++){
       ?>

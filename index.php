@@ -65,7 +65,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
         #centerAddr {display:block;margin-top:2px;font-weight: normal;}
         .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-        #foodTbody {margin-left:2px; margin-right: 2px; margin-top:2px;margin-bottom:2px; font-weight: normal;}
+        #foodTbody {padding: 3px; text-align: center;}
+        #foodThead {padding: 3px; text-align: center;}
+        #foodTable{border-collapse: collapse;width: 100%;}
     </style>
     <title>맛집 검색</title>
 </head>
@@ -96,8 +98,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <button onclick="Mk15()">중구 맛집</button>
     <button onclick="Mk16()">해운대구 맛집</button>
 </p> 
-<table border="1" id="foodThead">
-    <thead>
+<table border="1" id="foodTable">
+    <thead id="foodThead">
         <tr>
             <!-- 0 -->
             <th>가게 이름</th>

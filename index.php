@@ -60,7 +60,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <head>
     <meta charset="utf-8">
     <style>
-        .map_wrap {position:relative;width:50%;height:750px;}
+        .map_wrap {position:relative;width:850px;height:800px;}
         .title {font-weight:bold;display:block;}
         .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
         #centerAddr {display:block;margin-top:2px;font-weight: normal;}
@@ -77,31 +77,41 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     </div>
 </div>
 <p>
-    <input id="mk1" class="mk1" type="button" value="클릭" onclick="Mk1()">
     <button onclick="Mkall()">처음화면으로</button>
-    <button onclick="Mk1()">수영구 맛집</button>
-    <button onclick="Mk2()">강서구 맛집</button>
-    <button onclick="Mk3()">금정구 맛집</button>
-    <button onclick="Mk4()">기장군 맛집</button>
-    <button onclick="Mk5()">남구 맛집</button>
-    <button onclick="Mk6()">중구 맛집</button>
-    <button onclick="Mk7()">동래구 맛집</button>
-    <button onclick="Mk8()">부산진구 맛집</button>
-    <button onclick="Mk9()">북구 맛집</button>
-    <button onclick="Mk10()">사상구 맛집</button>
-    <button onclick="Mk11()">사하구 맛집</button>
-    <button onclick="Mk12()">서구 맛집</button>
-    <button onclick="Mk13()">연제구 맛집</button>
-    <button onclick="Mk14()">영도구 맛집</button>
-    <button onclick="Mk15()">북구 맛집</button>
-    <button onclick="Mk16()">해운대구 맛집</button>
+    <button onclick="Mk1()" id="btmk1">수영구 맛집</button>
+    <button onclick="Mk2()" id="btmk2">강서구 맛집</button>
+    <button onclick="Mk3()" id="btmk3">금정구 맛집</button>
+    <button onclick="Mk4()" id="btmk4">기장군 맛집</button>
+    <button onclick="Mk5()" id="btmk5">남구 맛집</button>
+    <button onclick="Mk6()" id="btmk6">동구 맛집</button>
+    <button onclick="Mk7()" id="btmk7">동래구 맛집</button>
+    <button onclick="Mk8()" id="btmk8">부산진구 맛집</button>
+    <button onclick="Mk9()" id="btmk9">북구 맛집</button>
+    <button onclick="Mk10()" id="btmk10">사상구 맛집</button>
+    <button onclick="Mk11()" id="btmk11">사하구 맛집</button>
+    <button onclick="Mk12()" id="btmk12">서구 맛집</button>
+    <button onclick="Mk13()" id="btmk13">연제구 맛집</button>
+    <button onclick="Mk14()" id="btmk14">영도구 맛집</button>
+    <button onclick="Mk15()" id="btmk15">중구 맛집</button>
+    <button onclick="Mk16()" id="btmk16">해운대구 맛집</button>
 </p> 
-<script>
-if(mk1.clicked == true){
-  mk1.value = "이야";
-  }
-</script>
+<table border="1" id="foodThead">
+    <thead>
+        <tr>
+            <!-- 0 -->
+            <th>가게 이름</th>
+            <th>음식종류</th>
+            <th>전화번호</th>
+            <th>가게 위치</th>
+        </tr>
+    </thead>
+    <tbody border="1" id="foodTbody">
+    </tbody>
+</table>
+
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
+
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
@@ -209,7 +219,7 @@ for($i = 0; $i < count($lname); $i++){
         });
         mk5.push(foodmk);
     }
-    else if("<? echo $lname[$i]; ?>" == "중구"){
+    else if("<? echo $lname[$i]; ?>" == "동구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
@@ -281,7 +291,7 @@ for($i = 0; $i < count($lname); $i++){
         });
         mk14.push(foodmk);
     }
-    else if("<? echo $lname[$i]; ?>" == "북구"){
+    else if("<? echo $lname[$i]; ?>" == "중구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
@@ -340,6 +350,11 @@ function displayCenterInfo(result, status) {
         }
     }    
 }
+</script>
+<script>
+   
+</script>
+<script>
 function setmk1(map) {
   for(var j = 0; j < mk1.length; j++){
     mk1[j].setMap(map);
@@ -437,6 +452,21 @@ function Mkall() {
   setmk14(map);
   setmk15(map);
   setmk16(map);
+  $("#foodTbody").empty();
+  var html = '';
+  
+  <?for($i = 0; $i < count($lname);$i++){?>
+        if("<? echo $lname;?>" == "수영구")
+            html += '<tr>';
+            html += '<td>'+<? echo $loc_name[$i];?>+'</td>';
+            html += '<td>'+<? echo $b_name[$i];?>+'</td>';
+            html += '<td>'+<? echo $phone[$i];?>+'</td>';
+            html += '<td>'+<? echo $loc[$i];?>+'</td>';
+            html += '</tr>';
+        }  
+<?  } ?>
+ 
+  $("#foodTbody").append(html);
 }
 function Mk1() {
   setmk1(map);

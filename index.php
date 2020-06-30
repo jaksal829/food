@@ -40,8 +40,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <meta charset="utf-8">
     <style>
         .map {
-            width :100%
-            height: 100 
+            width :100%;
+            height : 100;
         }
     </style>
     <title>맛집 검색</title>

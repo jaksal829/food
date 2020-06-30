@@ -454,6 +454,7 @@ function Mk1() {
   setmk14(null);
   setmk15(null);
   setmk16(null);
+  alert("test");
 }
 function Mk2() {
   setmk1(null);

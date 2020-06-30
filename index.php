@@ -112,8 +112,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9&libraries=services,clusterer,drawing"></script>
 <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
   crossorigin="anonymous"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

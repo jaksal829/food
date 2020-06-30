@@ -461,10 +461,10 @@ function Mk1() {
         <?
           echo "이재안";  
         ?>
-      }else
+      }else{
       <?
         echo "실패";      
-      
+      }
     }
       ?> 
   }

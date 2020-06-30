@@ -133,11 +133,14 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 <?
 for($i = 0; $i < count($lname); $i++){
     ?>
-    var foodmk = new kakao.maps.Marker({
-        map:map,
-        position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
-        image: markerImage
-    })
+    if(<? echo $lname; ?> == "수영구"){
+        var foodmk = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
+            image: markerImage
+        });
+    }
+    
     <?
 }
 ?>

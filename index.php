@@ -1,7 +1,10 @@
 <?php
+  header('Content-Type: text/html; charset=utf-8');
+?>
+<?php
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "gunan", "pwd" => "app2020!", "Database" => "food", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:appcen.database.windows.net,1433";
+$connectionInfo = array("UID" => "gunan", "pwd" => "app2020!", "Database" => "foodcloud", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:foodcloud.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
     if (!$conn) {
         echo "conn: false";
@@ -44,7 +47,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     <title>맛집 검색</title>
 </head>
 <body>
-  <p>vvvvvvvvvv</p>
 <div id="map" class="map"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdda6bf48b2ef47a00384ad09b8c0684"></script>

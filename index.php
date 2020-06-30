@@ -38,10 +38,16 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <html>
 <head>
     <meta charset="utf-8">
+    <style>
+        .map {
+            width :100%
+            height: 100 
+        }
+    </style>
     <title>맛집 검색</title>
 </head>
 <body>
-<div id="map" style="width:100%;height:350px;"></div>
+<div id="map" class="map"style="width:100%;height:350px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdda6bf48b2ef47a00384ad09b8c0684"></script>
 <script>

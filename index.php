@@ -436,9 +436,11 @@ function setmk16(map) {
   }
 }
 function Mkall() {
-    var html = '';
-    $("#foodTbody").empty();
-    $("#foodTbody").append(html);
+  var html = '';
+  $("#foodTbody").empty();
+  $("#foodTbody").append(html);
+  map.setCenter(new kakao.maps.LatLng(35.179783, 129.075003));
+  map.setLevel(9);
   setmk1(map);
   setmk2(map);
   setmk3(map);
@@ -457,51 +459,51 @@ function Mkall() {
   setmk16(map);
 }
 function Mk1() {
-    var html = '';
-  <?for($i = 0; $i < count($lname);$i++){?>
-        if("<? echo $lname[$i];?>" == "수영구") {
-            html += '<tr>';
-            html += '<td><? echo $loc_name[$i];?></td>';
-            html += '<td><? echo $b_name[$i];?></td>';
-            html += '<td><? echo $phone[$i];?></td>';
-            html += '<td><? echo $loc[$i];?></td>';
-            html += '</tr>';
-        }
-<?  } ?>
-    $("#foodTbody").empty();
-    $("#foodTbody").append(html);
+  var html = '';
+<?for($i = 0; $i < count($lname);$i++){?>
+      if("<? echo $lname[$i];?>" == "수영구") {
+          html += '<tr>';
+          html += '<td><? echo $loc_name[$i];?></td>';
+          html += '<td><? echo $b_name[$i];?></td>';
+          html += '<td><? echo $phone[$i];?></td>';
+          html += '<td><? echo $loc[$i];?></td>';
+          html += '</tr>';
+      }
+<? } ?>
+  $("#foodTbody").empty();
+  $("#foodTbody").append(html);
 
-    setmk1(map);
-    setmk2(null);
-    setmk3(null);
-    setmk4(null);
-    setmk5(null);
-    setmk6(null);
-    setmk7(null);
-    setmk8(null);
-    setmk9(null);
-    setmk10(null);
-    setmk11(null);
-    setmk12(null);
-    setmk13(null);
-    setmk14(null);
-    setmk15(null);
-    setmk16(null);
+  setmk1(map);
+  setmk2(null);
+  setmk3(null);
+  setmk4(null);
+  setmk5(null);
+  setmk6(null);
+  setmk7(null);
+  setmk8(null);
+  setmk9(null);
+  setmk10(null);
+  setmk11(null);
+  setmk12(null);
+  setmk13(null);
+  setmk14(null);
+  setmk15(null);
+  setmk16(null);
 }
 function Mk2() {
-    var html = '';
-  <?for($i = 0; $i < count($lname);$i++){?>
-        if("<? echo $lname[$i];?>" == "강서구") {
-            html += '<tr>';
-            html += '<td><? echo $loc_name[$i];?></td>';
-            html += '<td><? echo $b_name[$i];?></td>';
-            html += '<td><? echo $phone[$i];?></td>';
-            html += '<td><? echo $loc[$i];?></td>';
-            html += '</tr>';
-        }
+  var html = '';
+<?for($i = 0; $i < count($lname);$i++){?>
+    if("<? echo $lname[$i];?>" == "강서구") {
+      html += '<tr>';
+      html += '<td><? echo $loc_name[$i];?></td>';
+      html += '<td><? echo $b_name[$i];?></td>';
+      html += '<td><? echo $phone[$i];?></td>';
+      html += '<td><? echo $loc[$i];?></td>';
+      html += '</tr>';
+    }
 <?  } ?>
-    $("#foodTbody").empty();
-    $("#foodTbody").append(html);
+  $("#foodTbody").empty();
+  $("#foodTbody").append(html);
   setmk1(null);
   setmk2(map);
   setmk3(null);
@@ -522,17 +524,17 @@ function Mk2() {
 function Mk3() {
     var html = '';
   <?for($i = 0; $i < count($lname);$i++){?>
-        if("<? echo $lname[$i];?>" == "금정구") {
-            html += '<tr>';
-            html += '<td><? echo $loc_name[$i];?></td>';
-            html += '<td><? echo $b_name[$i];?></td>';
-            html += '<td><? echo $phone[$i];?></td>';
-            html += '<td><? echo $loc[$i];?></td>';
-            html += '</tr>';
-        }
+      if("<? echo $lname[$i];?>" == "금정구") {
+        html += '<tr>';
+        html += '<td><? echo $loc_name[$i];?></td>';
+        html += '<td><? echo $b_name[$i];?></td>';
+        html += '<td><? echo $phone[$i];?></td>';
+        html += '<td><? echo $loc[$i];?></td>';
+        html += '</tr>';
+      }
 <?  } ?>
-    $("#foodTbody").empty();
-    $("#foodTbody").append(html);
+  $("#foodTbody").empty();
+  $("#foodTbody").append(html);
   setmk1(null);
   setmk2(null);
   setmk3(map);

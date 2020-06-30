@@ -49,7 +49,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 <body>
 <div id="map" class="map"></div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=79185744f84afa7e2869c23017ca18a0"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c564aa9dfa0c70f5fd1a02484baf5e9"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 

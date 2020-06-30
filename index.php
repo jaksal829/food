@@ -123,6 +123,23 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
         }   
     });
 });
+var mk1 = [];
+var mk2 = [];
+var mk3 = [];
+var mk4 = [];
+var mk5 = [];
+var mk6 = [];
+var mk7 = [];
+var mk8 = [];
+var mk9 = [];
+var mk10 = [];
+var mk11 = [];
+var mk12 = [];
+var mk13 = [];
+var mk14 = [];
+var mk15 = [];
+var mk16 = [];
+var mk17 = [];
 var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 // 마커 이미지의 이미지 크기 입니다
 var imageSize = new kakao.maps.Size(24, 35); 
@@ -133,13 +150,14 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 <?
 for($i = 0; $i < count($lname); $i++){
     ?>
-    //if(<? echo $lname[$i]; ?> == "수영구"){
+    if(<? echo $lname[$i]; ?> == "수영구"){
         var foodmk = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(<? echo $lat[$i]; ?>,<? echo $lng[$i]; ?>),
             image: markerImage
         });
-    //}
+        mk1.push(foodmk);
+    }
     var foodinfo = new kakao.maps.InfoWindow({content : '<div style="padding:5px;">위치 : <? echo $lname[$i]; ?> <br><p>기간 : <? echo $loc_name[$i]; ?></p></div>', removable : true , zindex : 1});
     kakao.maps.event.addListener(foodmk, 'click', makerClick(map,foodmk,foodinfo));
     <?

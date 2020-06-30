@@ -453,7 +453,7 @@ function Mkall() {
 function Mk1() {
     var html1 = '';
   <?for($i = 0; $i < count($lname);$i++){?>
-        if("<? echo $lname;?>" == "수영구") {
+        if("<? echo $lname[$i];?>" == "수영구") {
             html1 += '<tr>';
             html1 += '<td><? echo $loc_name[$i];?></td>';
             html1 += '<td><? echo $b_name[$i];?></td>';
